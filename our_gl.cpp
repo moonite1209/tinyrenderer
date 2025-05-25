@@ -13,9 +13,9 @@ void projection(const double f) { // check https://en.wikipedia.org/wiki/Camera_
 }
 
 void lookat(const vec3 eye, const vec3 center, const vec3 up) { // check https://github.com/ssloy/tinyrenderer/wiki/Lesson-5-Moving-the-camera
-    vec3 z = normalized(center-eye);
-    vec3 x = normalized(cross(up,z));
-    vec3 y = normalized(cross(z, x));
+    vec3 z = normalized(center-eye); // camera z-axis in world space
+    vec3 x = normalized(cross(up,z)); // camera x-axis in world space
+    vec3 y = normalized(cross(z, x)); // camera y-axis in world space
     ModelView = mat<4,4>{{{x.x,x.y,x.z,0}, {y.x,y.y,y.z,0}, {z.x,z.y,z.z,0}, {0,0,0,1}}} *
                 mat<4,4>{{{1,0,0,-eye.x},  {0,1,0,-eye.y},  {0,0,1,-eye.z},  {0,0,0,1}}};
 }

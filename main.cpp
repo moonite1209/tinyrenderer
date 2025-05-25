@@ -55,9 +55,9 @@ int main(int argc, char** argv) {
 
     constexpr int width  = 800;      // output image size
     constexpr int height = 800;
-    constexpr vec3 light_dir{1,1,1}; // light source
-    constexpr vec3       eye{1,1,3}; // camera position
-    constexpr vec3    center{0,0,0}; // camera direction
+    constexpr vec3 light_dir{1,1,1}; // light source point
+    constexpr vec3       eye{1,1,3}; // camera center point
+    constexpr vec3    center{0,0,0}; // camera look point
     constexpr vec3        up{0,1,0}; // camera up vector
 
     lookat(eye, center, up);                            // build the ModelView matrix
